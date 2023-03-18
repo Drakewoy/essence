@@ -17,8 +17,8 @@
         <form method="post" action="">
             <input type="text" name="user" required placeholder="Nom d'utilisateur"><br><br>
             <input type="password" name="pass" required placeholder="Mot de passe"><br><br>
-            <input type="submit" value="Connecter" name="">
-            <input type="reset" value="Reinitialiser" name="">
+            <input type="submit" value="Connecter" >
+            <input type="reset" value="Reinitialiser" >
         </form>
         <%
          String user = request.getParameter("user");
