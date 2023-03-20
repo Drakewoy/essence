@@ -15,7 +15,7 @@
         <h1>Vous etes connectez entant que <%=request.getAttribute("username")%></h1>
   <ul>
     <li><a href="Commande.jsp">Commande</a></li>
-    <li><a href="station.jsp">Station</a></li>
+    <li><a href="listeStation.jsp">Station</a></li>
     <li><a href="Vente.jsp">Vente</a></li>
 </ul>
     </body>

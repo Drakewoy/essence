@@ -1,0 +1,13 @@
+#stationC{
+    width:11%;
+    height: auto;
+    margin-bottom: 10px;
+    padding: 1%;
+    border-radius:15px;
+}
+#stationC:first-child{
+    background-color: #33ff33;
+}
+span{
+    color:blue;
+}
