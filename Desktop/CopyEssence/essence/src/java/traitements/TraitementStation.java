@@ -46,6 +46,7 @@ public class TraitementStation {
         HashMap<String, StationModels> coll =new HashMap();
         StringTokenizer st = null;
     Scanner sc = new Scanner(file);
+    if(sc !=null){
     while(sc.hasNextLine()){
         st=new StringTokenizer(sc.nextLine(), ":");
         String code = st.nextToken();
@@ -56,6 +57,9 @@ public class TraitementStation {
         String pU_d = st.nextToken();
         String qt_gD_d = st.nextToken();
         String qt_gG_d = st.nextToken();
+        coll.putIfAbsent(code, new StationModels(code, nom, Integer.parseInt(cp_gG),Integer.parseInt(cp_gD),
+                Integer.parseInt(pU_g), Integer.parseInt(pU_d), Integer.parseInt(qt_gD_d), Integer.parseInt(qt_gG_d)));
+    }
     }
     return coll;
     }

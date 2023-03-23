@@ -1,13 +1,17 @@
-<%@page import="java.util.ArrayList"%>
-<%@page import="java.nio.file.Files" %>
-<%@page import="java.util.StringTokenizer"%>
-<%@page import="java.io.File"%>
+<%@page import="java.util.HashMap"%>
+<%@page import="java.util.Map"%>
+<%@page import="com.station.StationModels"%>
+<%@page import="traitements.TraitementStation"%>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%
-    File file = new File("station.txt");
-    if (!file.exists()) {
-        file.createNewFile();
+    TraitementStation trSt = new TraitementStation();
+    HashMap<String, StationModels> map = null;
+    try {
+        map = trSt.lecture();
+    } catch(Exception e){
+    e.getMessage();
     }
 %>
 <!DOCTYPE html>
@@ -22,38 +26,40 @@
     <body>
         <h1>Station</h1>
 
-       
-            <%
-                StringTokenizer st = null;
-                if (file != null) {
-                    if (!Files.readAllLines(file.toPath()).isEmpty()) {
-                        for (Object o : Files.readAllLines(file.toPath())) {
-                           st = new StringTokenizer(o.toString(), ":");
-            %>
-          
-            <div class="fListeStation">
-                <div class="ListeStation">
-                    <div><span>ID:</span><%=st.nextToken()%></div>
-                    <div><span>Station:</span><%=st.nextToken()%></div>
-                    <div><span>Cap_Gasoline:</span><%=Integer.parseInt(st.nextToken())%></div>
-                    <div><span>Cap_Diesel:</span><%=Integer.parseInt(st.nextToken())%></div>
-                    <div><span>U_Diesel:</span><%=Integer.parseInt(st.nextToken())%></div>
-                    <div><span>U_Gasoline:</span><%=Integer.parseInt(st.nextToken())%></div>
-                    <div><span>QTD_Disponible:</span><%=Integer.parseInt(st.nextToken())%></div>
-                    <div><span>QTG_Disponible:</span><%=Integer.parseInt(st.nextToken())%></div>
-                </div>
+
+
+        <div class="fListeStation">
+            
+        <%
+            if (map != null) {
+                if (map.size() > 0) {
+                    for (StationModels st : map.values()) {
+             
+        %>
+            <div class="ListeStation">
+                <div class="station"><span>ID:</span><%=st.getId()%></div>
+                <div class="station"><span>Station:</span><%=st.getNom_station()%></div>
+                <div class="station"><span>Cap_Gasoline:</span><%=st.getCp_gG()%></div>
+                <div class="station"><span>Cap_Diesel:</span><%=st.getCp_gD()%></div>
+                <div class="station"><span>U_Diesel:</span><%=st.getpU_g()%></div>
+                <div class="station"><span>U_Gasoline:</span><%=st.getpU_d()%></div>
+                <div class="station"><span>QTD_Disponible:</span><%=st.getQt_gD_d()%></div>
+                <div class="station"><span>QTG_Disponible:</span><%=st.getQt_gG_d()%></div>
             </div>
-           <%   } }}
-
+            
+                <%   }
+        }
+        } %>
+ <div class="control">Modifier</div>
           
 
 
-    request.setAttribute("Station", st);%>
-</table>
-<hr>
+ <!--// request.setAttribute("Station", st);-->
+       
+        </div>
 
 
 
-<a href="station.jsp">Back</a>
+    <a href="station.jsp">Back</a>
 </body>
 </html>

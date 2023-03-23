@@ -16,8 +16,6 @@
         <!--Le conteneur qui contient la forme--> 
         <div class="fConteneur">
             <form action="TrStation.jsp" method="post">
-                <label for="id">Id</label>
-                <input type="text" name="id" required>
                 <label for="station">Nom_Station</label>
                 <select name="Station" id="station">
                     <option value="mirbalais">Mirbalais</option>
