@@ -1,0 +1,64 @@
+.h1Com{
+    padding:0;
+    text-align: center;
+    font-family: "Helvetica", Arial;
+    letter-spacing: 5px;
+    text-shadow:2px 0px #09ff09;
+}
+div.preCommande{
+    background-color: #ECF2FF;
+    padding-left:2.9%;
+    /*padding-top:5%;*/
+/*    padding-bottom:20%;*/
+    border-radius: 15px;
+    border:1px solid black;
+   width:60vw;
+   margin:auto;
+}
+div.preCommande #pr_table, #dx_table{
+    color:#333;
+    display: inline-block;
+    text-align: center;
+    font-family: Arial;
+    font-size: 22px;
+    clear:both;
+}
+div.preCommande  #dx_table{
+float:right;
+position:absolute;
+}
+div.preCommande #pr_table{
+    margin-bottom:7%;
+}
+
+div.preCommande form input[type=submit]{
+    float:right;
+    width:100px;
+    background-color: #ECF2FF;
+    border:none;
+    margin-top:5px;
+    line-height: 25px;
+    border: 1px solid #000000;
+    position:relative;
+    top:-40px;
+   right:5px;
+   font-weight:bolder;
+   border-radius: 15px;
+}
+
+/*liste des comande*/
+div.listeCommande{
+    background-color: #ECF2FF;
+/*    padding-left:2.9%;*/
+    /*padding-top:5%;*/
+/*    padding-bottom:20%;*/
+    border-radius: 15px;
+    border:1px solid black;
+   width:60vw;
+   margin:10px auto;
+   padding-bottom:4%;
+}
+div.listeCommande table{
+    width:80%;
+    text-align: center;
+}
